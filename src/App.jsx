@@ -47,8 +47,12 @@ export default function App() {
         updateTask={updateTask} 
         deleteTask={deleteTask} 
       />
-      <Progresstracker />
-      <button onClick={clearAllTasks}>Clear All Tasks</button>
+      {/* Pass tasks prop to Progresstracker */}
+      <Progresstracker tasks={tasks} />
+      {tasks.length>0 && (
+      <button onClick={clearAllTasks}>Clear All Tasks</button>)}
     </div>
+
+    
   );
 }
